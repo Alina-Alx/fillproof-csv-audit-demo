@@ -1,0 +1,59 @@
+name: Focused JavaScript or TypeScript bug-fix request
+description: Ask whether one reproducible defect fits a small fixed-price repair with a regression test.
+title: "[Bug-fix request] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public. Describe the behavior without posting source code, credentials, customer data, logs containing personal data, or private files. Repository access and sanitized technical material can be discussed privately only after scope is agreed.
+  - type: dropdown
+    id: stack
+    attributes:
+      label: Primary stack
+      options:
+        - JavaScript
+        - TypeScript
+        - React
+        - Next.js
+        - Node.js
+        - Other JavaScript/TypeScript stack
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Public-safe reproduction summary
+      description: State the steps, actual result, and expected result without including private implementation details.
+      placeholder: |
+        Steps: ...
+        Actual: ...
+        Expected: ...
+    validations:
+      required: true
+  - type: dropdown
+    id: test_setup
+    attributes:
+      label: Existing automated test setup
+      options:
+        - Yes, tests run locally
+        - Tests exist but currently fail
+        - No test setup
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Target deadline
+      description: Give a date or write "flexible"; do not promise access or payment here.
+      placeholder: Flexible
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I have not included credentials, private source code, personal/customer data, or production files in this public issue.
+          required: true
